@@ -1,0 +1,24 @@
+
+.footer-section_links{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.footer-section_disclaimer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(124, 123, 123);
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 14px;
+    &:hover{
+        text-decoration: underline;
+    }
+}
