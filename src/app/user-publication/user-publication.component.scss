@@ -1,0 +1,64 @@
+.user-publication-section{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.295);
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+}
+.options{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+}
+.creator-logo{
+    width: 40px;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+}
+.content{
+}
+.content-img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.action-bar{
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: row;
+    column-gap: 15px;
+}
+.action-mark{
+    margin-left: auto;
+}
+.comments{
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+}
+.add-comment-area{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    & > button {
+        border: 0;
+        background-color: transparent;
+    }
+}
+.add-comment{
+    resize:none;
+    border: 0;
+    background-color: transparent;
+    outline: none;
+    width: 90%;
+    height: 40px;
+}
+
+.publish{
+    margin-left: auto;
+}

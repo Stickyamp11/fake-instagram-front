@@ -3,3 +3,33 @@
     height: 100%;
     width: 100%;
 }
+
+.content-options{
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid black;
+    & > button {
+        border: 0;
+        background-color: transparent;
+        font-weight: 600;
+        font-size: 16px;
+    }
+}
+
+.publications{
+    display: flex;
+    justify-content: center;
+}
+.publications-comp{
+    display: flex;
+    justify-content: center;
+}
+/*.storys{
+    width: 30%;
+    position: relative;
+
+}
+.user-stories{
+    display: block;
+    width: 100%;
+}*/
