@@ -1,5 +1,6 @@
 .user-publication-section{
     border-bottom: 1px solid rgba(0, 0, 0, 0.295);
+    margin-bottom: 5px;
 }
 .header{
     display: flex;
@@ -44,11 +45,13 @@
 .add-comment-area{
     margin-top: 10px;
     display: flex;
+    align-items: flex-start;
     flex-direction: row;
     & > button {
         border: 0;
         background-color: transparent;
     }
+    margin-bottom: 2px;
 }
 .add-comment{
     resize:none;
@@ -61,4 +64,11 @@
 
 .publish{
     margin-left: auto;
+}
+
+@media(max-width: 400px){
+    .user-publication-section{
+        border-bottom: 0px;
+        margin-bottom: 0px;
+    }
 }

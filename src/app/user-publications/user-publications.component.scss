@@ -4,3 +4,9 @@
 
 .user-publication{
 }
+
+@media(max-width: 400px){
+    .user-publications-section{
+        width: 100%;
+    }
+}

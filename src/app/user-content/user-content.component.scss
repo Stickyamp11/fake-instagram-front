@@ -1,19 +1,33 @@
 .user-content-section{
-    background-color: beige;
+   /* background-color: beige;*/
     height: 100%;
-    width: 100%;
+    width: 625px;
+}
+@media (max-width: 650px) {
+    .user-content-section {
+        width: 95vw;
+    }
 }
 
 .content-options{
+    margin-top: 20px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
     display: flex;
     flex-direction: row;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid rgba(43, 42, 42, 0.158);
     & > button {
         border: 0;
         background-color: transparent;
         font-weight: 600;
         font-size: 16px;
     }
+    & > .following{
+        opacity: .5;
+    }
+    & > .for-you{
+        font-weight: 600;
+    }    
 }
 
 .publications{
@@ -24,12 +38,10 @@
     display: flex;
     justify-content: center;
 }
-/*.storys{
-    width: 30%;
-    position: relative;
-
+.storys{
+    width: 100%;
 }
-.user-stories{
+/*.user-stories{
     display: block;
     width: 100%;
 }*/
