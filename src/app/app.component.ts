@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { LoginComponent } from './login/login.component';
-import { UserHomeComponent } from './user-home/user-home.component';
+import { UserHomeComponent } from './userHome/user-home/user-home.component';
 
 @Component({
   selector: 'app-root',

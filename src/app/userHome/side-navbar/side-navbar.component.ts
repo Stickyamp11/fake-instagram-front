@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { ResponsiveHidder1100Directive } from '../responsive-hidder.directive';
-import { ResponsiveHidder700Directive } from '../responsive-hidder-700.directive';
+import { ResponsiveHidder1100Directive } from '../../responsive-hidder.directive';
+import { ResponsiveHidder700Directive } from '../../responsive-hidder-700.directive';
 
 @Component({
   selector: 'app-side-navbar',

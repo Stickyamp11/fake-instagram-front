@@ -1,0 +1,24 @@
+.user-img{
+    aspect-ratio: 1/1;
+    width: 30px;
+    border-radius: 100%;
+}
+.individual-story{
+    z-index: 2;
+}
+.mini-story-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    position: relative;
+}
+.loader-img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    position: absolute;
+    background-image: url('../../assets/452989553_793893229566973_9011123970707059570_n.jfif');
+    background-size: cover;
+    opacity: 0.6;
+}

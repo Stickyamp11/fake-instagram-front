@@ -1,0 +1,190 @@
+.stories-page-section{
+    background-color: rgba(0, 0, 0, 0.87);
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 60px;
+    overflow-x: hidden;
+}
+.stories-main-wrapper{
+    width: 500px;
+    min-width: 500px;
+    height: 95%;
+    position: relative;
+}
+
+.stories-main{
+    position: relative;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(187, 140, 78);
+    overflow: hidden;
+}
+.next-back-options{
+    position: absolute;
+    width: 580px;
+    height: 20px;
+    z-index: 2;
+    top: 47.5%;
+    right: -40px;
+    pointer-events: none;
+    display: flex;
+    flex-direction: row;
+    & > .next-button{
+        margin-left: auto;
+    }
+}
+.next-back-options > button{
+    pointer-events: all;
+}
+.next-back-options > button > svg{
+    color: rgb(141, 141, 141);
+}
+.next-back-options > button:hover > svg{
+    color: rgb(255, 255, 255);
+    transition: .2s;
+}
+.minor-stories{
+    min-width: 200px;
+    width: 200px;
+    height: 350px;
+    background-color: rgba(136, 60, 60, 0.356);
+    border-radius: 10px;
+    overflow: hidden;
+
+}
+
+.interactive-menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 95%;
+    padding: 20px;
+    z-index: 2;
+}
+.progress-bar{
+    position: relative;
+    background-color: rgba(65, 65, 65, 0.39);
+    width: 98%;
+    height: 4px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+.progress-bar-inner{
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    width: 0%;
+    height: 4px;
+    opacity: 0.8;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    z-index: 2;
+}
+button {
+    background-color: transparent;
+    border: 0px;
+    z-index: 2;
+
+}
+button > svg {
+    color: white;
+}
+.options{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    z-index: 2;
+}
+.story-owner-img{
+    aspect-ratio: 1/1;
+    width: 30px;
+    border-radius: 100%;
+}
+.username{
+    margin-left: 5px;
+    color: white;
+    font-size: 14px;
+    margin-right: 8px;
+}
+.time-from-publish{
+    font-size: 15px;
+    opacity: .8;
+    color: rgb(247, 241, 241);
+}
+.go-back-button{
+    display: none;
+}
+.audio-button{
+    margin-left: auto;
+}
+::placeholder {
+    color: rgb(255, 253, 253);
+    opacity: 0.7;
+  }
+.message-section{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-top: auto;
+    align-items: center;
+    z-index: 2;
+
+    & > input {
+        background-color: transparent;
+        border-radius: 30px;
+        border: 1px solid rgba(255, 255, 255, 0.658);
+        color: white;
+        padding: 15px;
+        flex: 1 1 1%;
+    }
+}
+.mark-as-fav{
+    margin-left: 10px;
+}
+.centered-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+
+}
+.story-content{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+.main-content{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+@media (max-width: 700px) {
+    .inner-mini{
+        display: none;
+    }
+    .next-back-options{
+        display: none;
+    }
+    .go-back-button{
+        display: block;
+    }
+}
+@media (max-width: 500px) {
+    .stories-main-wrapper{
+        width: 100%;
+        height: 100%;
+        min-width: 200px;
+    }
+    .minor-stories{
+        display: none;
+    }
+    .stories-main{
+        border-radius: 0px;
+    }
+}
