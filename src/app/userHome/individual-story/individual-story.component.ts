@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { SkeletonImageComponent } from '../../modals/skeleton-image/skeleton-image.component';
 
 @Component({
   selector: 'app-individual-story',
   standalone: true,
-  imports: [],
+  imports: [SkeletonImageComponent],
   templateUrl: './individual-story.component.html',
   styleUrl: './individual-story.component.scss'
 })

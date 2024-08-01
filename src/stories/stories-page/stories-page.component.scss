@@ -162,6 +162,11 @@ button > svg {
     height: 100%;
     object-fit: cover;
 }
+.go-back-button-big{
+    position: fixed;
+    top: 30px;
+    right: 30px;
+}
 
 
 @media (max-width: 700px) {
@@ -173,6 +178,9 @@ button > svg {
     }
     .go-back-button{
         display: block;
+    }
+    .go-back-button-big{
+        display: none;
     }
 }
 @media (max-width: 500px) {

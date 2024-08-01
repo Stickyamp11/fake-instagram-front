@@ -22,7 +22,7 @@ export class StoriesPageComponent {
   private progressBar!: HTMLElement;
 
   private linkToNextStory: string = "/stories/fweewfwe/feefsef";
-  private linkToPreviousStory: string = "/stories/fweewfwe/feefsef";
+  private linkToPreviousStory: string = "/stories/fweewfwe/fwefefefewfwef";
 
   constructor(private route: ActivatedRoute, private router: Router) { }
 
@@ -103,6 +103,11 @@ export class StoriesPageComponent {
 
   JumpToNextStory(){
     this.router.navigate([this.linkToNextStory]).then(() => {
+      window.location.reload();
+    });
+  }
+  JumpToPreviousStory(){
+    this.router.navigate([this.linkToPreviousStory]).then(() => {
       window.location.reload();
     });
   }

@@ -1,0 +1,11 @@
+<app-generic-modal (close)="closeModal()" #modal>
+  <div class="options-wrapper">
+    @for (option of options; track option; let i = $index) {
+      <button class="option" [ngClass]="{
+        'option_first': i == 0,
+        'option_last': i == options.length - 1,
+        'option_red': i == 0 || i == 1
+      }" (click)="handleOption(option)">{{option.title}}</button>
+    }
+  </div>
+  </app-generic-modal>

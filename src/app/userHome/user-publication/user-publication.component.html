@@ -3,12 +3,13 @@
         <img src="../../assets/manu_cs21.jpg" class="creator-logo">
         <div class="creator-username">manu.cs21</div>
         <div class="upload-date">6 días</div>
-        <div class="options">
+        <div class="options" (click)="openOptions()">
             <svg aria-label="Más opciones" class="x1lliihq x1n2onr6 x5n08af" fill="currentColor" height="24" role="img" viewBox="0 0 24 24" width="24"><title>Más opciones</title><circle cx="12" cy="12" r="1.5"></circle><circle cx="6" cy="12" r="1.5"></circle><circle cx="18" cy="12" r="1.5"></circle></svg>
         </div>
     </div>
     <div class="content">
-        <img src="../../assets/content_1.jpg" alt="" class="content-img">
+        <!--<img src="../../assets/content_1.jpg" alt="" class="content-img">-->
+        <app-skeleton-image imageUrl="../../assets/content_1.jpg" placeholder-width="500px" placeholder-height="500px" class="content-skeleton"></app-skeleton-image>
     </div>
     <div class="comments-section">
         <div class="action-bar">
@@ -47,3 +48,4 @@
         </div>
     </div>
 </div>
+<app-options-modal></app-options-modal>

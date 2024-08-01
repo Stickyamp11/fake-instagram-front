@@ -1,0 +1,17 @@
+<div class="skeleton-wrapper"
+[ngClass]="{'skeleton-loading': !isLoaded, 'skeleton-loaded': isLoaded}"
+[ngStyle]="!isLoaded ? {} : {}"
+>
+<!-- {'width': widthPH, 'height': heightPH, 'border-radius': borderRadiusPH} -->
+
+<!-- [ngStyle]="{'width': widthPH, 'height': heightPH, 'border-radius': borderRadiusPH}" -->
+    <div class="img-placeholder" [ngStyle]="{'border-radius': borderRadiusPH}"
+    [ngClass]="{placeholder: true, 'placeholder-loaded': isLoaded}"></div>
+
+    <!--<div class="img-placeholder" [ngStyle]="{'border-radius': borderRadiusPH}"
+    [ngClass]="{placeholder: true, 'placeholder-loaded': isLoaded}"></div>-->
+
+
+
+    <img [src]="imageUrl" alt="" class="inner-img" [ngStyle]="{'width': widthI, 'border-radius': borderRadiusI}" (load)="onLoad()">
+</div>

@@ -1,0 +1,10 @@
+<div #modalInner class="modal-overlay" *ngIf="isVisible" (click)="onOverlayClick($event)">
+    <div #modalContent class="modal-content">
+      <div class="header">
+        <!--<button class="close-button" (click)="hide()">
+            <svg _ngcontent-ng-c1755302853="" aria-label="Cerrar" fill="currentColor" height="24" role="img" viewBox="0 0 24 24" width="24"><title _ngcontent-ng-c1755302853="">Cerrar</title><polyline _ngcontent-ng-c1755302853="" fill="none" points="20.643 3.357 12 12 3.353 20.647" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></polyline><line _ngcontent-ng-c1755302853="" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" x1="20.649" x2="3.354" y1="20.649" y2="3.354"></line></svg>
+        </button>-->
+      </div>
+      <ng-content></ng-content>
+    </div>
+  </div>

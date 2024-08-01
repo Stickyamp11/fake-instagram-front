@@ -1,7 +1,14 @@
 <div class="story-section" (click)="goToStory()">
     <a class="user-profile">
         <div class="profile-spacer">
-            <img src="../../assets/manu_cs21.jpg" alt="" class="user-img">
+            <app-skeleton-image imageUrl="../../assets/manu_cs21.jpg"
+             placeholder-width="60px"
+             placeholder-borderRadius="100%"
+             img-width="60px"
+             img-borderRadius="100%"
+            >
+            </app-skeleton-image>
+            <!--<img src="../../assets/manu_cs21.jpg" alt="" class="user-img">-->
         </div>
     </a>
     <span class="user-name">
