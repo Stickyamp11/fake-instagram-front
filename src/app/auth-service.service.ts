@@ -1,14 +1,17 @@
-import { Injectable } from '@angular/core';
-import { delay, from, Observable, of } from 'rxjs';
+import { Injectable, OnInit } from '@angular/core';
+import { BehaviorSubject, delay, from, Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-
-  constructor() { }
+  isAuth$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  constructor() {
+    console.log("emitted next auth");
+    this.isAuth$.next(true);
+   }
 
   isLoggedIn(): Observable<boolean>{
-    return of(true).pipe(delay(2000));
+    return this.isAuth$.asObservable();
   }
 }

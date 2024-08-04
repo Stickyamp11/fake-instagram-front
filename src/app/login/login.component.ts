@@ -1,6 +1,8 @@
 import { Component, OnInit, signal, Signal, WritableSignal } from '@angular/core';
 import { FooterComponent } from '../footer/footer.component';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { LoginService } from '../login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +12,7 @@ import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
   styleUrl: './login.component.scss'
 })
 export class LoginComponent implements OnInit{
-  constructor(private fb: FormBuilder){}
+  constructor(private fb: FormBuilder, private loginService: LoginService, private router: Router){ console.log("rescue me!");}
   loginForm = this.fb.group({
     email: '',
     password: ''
@@ -36,7 +38,16 @@ export class LoginComponent implements OnInit{
   }
 
   submitLogin(){
-
+    let userLogin: UserLogin = {
+      email: this.loginForm.controls.email.value!,
+      password: this.loginForm.controls.password.value!
+    };
+    this.loginService.login(userLogin).subscribe(response => {
+      if(response.succeed)
+      {
+        this.router.navigate(["/home"]);
+      }
+    })
   }
 
   submitRegister(){

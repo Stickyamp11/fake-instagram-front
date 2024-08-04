@@ -4,11 +4,12 @@ import { LoginComponent } from './login/login.component';
 import { StoriesPageComponent } from '../stories/stories-page/stories-page.component';
 import { AuthGuard } from './auth-guard.guard';
 import { SkeletonImageComponent } from './modals/skeleton-image/skeleton-image.component';
+import { NewPublicationsComponent } from './new-publications/new-publications.component';
 
 export const routes: Routes = [
   { path: 'home', component: UserHomeComponent, canActivate: [] },
   { path: 'login', component: LoginComponent },
   { path: 'stories/:username/:storyId', component: StoriesPageComponent, canActivate: [] },
-  { path: 'test', component: SkeletonImageComponent },
+  { path: 'test', component: NewPublicationsComponent },
 
 ];

@@ -3,11 +3,6 @@
     height: 100%;
     width: 625px;
 }
-@media (max-width: 650px) {
-    .user-content-section {
-        width: 95vw;
-    }
-}
 
 .content-options{
     margin-top: 20px;
@@ -46,3 +41,11 @@
     display: block;
     width: 100%;
 }*/
+@media (max-width: 650px) {
+    .user-content-section {
+        width: 95vw;
+    }
+    .publications-comp{
+        min-width: 100%;
+    }
+}

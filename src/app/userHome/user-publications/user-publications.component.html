@@ -1,5 +1,5 @@
-<div class="user-publications-section">
-    @for (pub of publications; track pub; let i = $index) {
+<div class="user-publications-section" *ngIf="publicationsSig()">
+    @for (pub of publicationsSig(); track pub; let i = $index) {
         <div class="user-publication" #pubElements>
             <app-user-publication></app-user-publication>
         </div>

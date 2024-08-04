@@ -7,11 +7,12 @@ import { Store } from '@ngrx/store';
 import { AppStateInterface } from './redux/all.interface';
 import { isAuthSelector } from './redux/selectors';
 import * as MyActions from './redux/actions';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, LoginComponent,UserHomeComponent],
+  imports: [CommonModule, RouterOutlet, LoginComponent,UserHomeComponent, HttpClientModule ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

@@ -21,10 +21,11 @@ export class AuthGuard implements CanActivate {
   //isAuthLoading$: Observable<boolean | undefined>;
   constructor(
     private router: Router,
-    private store: Store<AppStateInterface>){
+    private store: Store<AppStateInterface>,
+    private authService: AuthService){
       //this.store.select(isAuthSelector).subscribe(() => );
       //console.log("triggered constructor");
-      this.store.select(isAuthSelector).subscribe();
+      //this.store.select(isAuthSelector).subscribe();
       //this.store.dispatch(Actions.getAuth());
       //this.isAuthLoading$ = this.store.pipe(select(isLoadingSelector));
     }
@@ -33,11 +34,11 @@ export class AuthGuard implements CanActivate {
     //return this.store.select(state => state.auth.isLoggedIn).pipe(
      // take(1),
      //this.store.dispatch(Actions.getAuth());
-     wait(5000);
-    console.log("1111");
+    // wait(5000);
+    //console.log("1111");
     //return this.authService.isLoggedIn().pipe(
     //return of(true);
-    return this.store.select(isAuthSelector).pipe(
+    /*return this.store.select(isAuthSelector).pipe(
       tap(() => {console.log("entrando")}),
       filter(value => value !== undefined),
       map(loggedIn => {
@@ -48,6 +49,10 @@ export class AuthGuard implements CanActivate {
         }
         return true;
       })
+    );*/
+
+    return this.authService.isLoggedIn().pipe(
+      tap((isAuth) => {console.log(isAuth,"isAuth")})
     );
   }
 }

@@ -1,0 +1,17 @@
+.new-publications-button{
+    padding: 10px;
+    margin: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.459);
+    background-color: rgb(245, 245, 245);
+    pointer-events: all;
+}
+
+.new-pubs-hook-wrapper{
+    display: flex;
+    justify-content: center;
+    pointer-events: none;
+}

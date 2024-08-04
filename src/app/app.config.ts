@@ -6,9 +6,11 @@ import { provideState, provideStore } from '@ngrx/store';
 import { reducers } from './redux/reducers'
 import { provideEffects } from '@ngrx/effects';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
+import { provideHttpClient } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
   providers: [
+     provideHttpClient(),
      provideRouter(routes),
      provideStore({reducers}),
      provideEffects(effects),
