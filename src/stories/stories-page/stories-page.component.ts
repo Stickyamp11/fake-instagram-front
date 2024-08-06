@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MiniStoryComponent } from '../mini-story/mini-story.component';
 
@@ -24,7 +24,24 @@ export class StoriesPageComponent {
   private linkToNextStory: string = "/stories/fweewfwe/feefsef";
   private linkToPreviousStory: string = "/stories/fweewfwe/fwefefefewfwef";
 
+  isVideo: boolean = true;
+  @ViewChild('videoPlayer') videoPlayer!: ElementRef;
+
+  playVideo() {
+    this.videoPlayer?.nativeElement.play();
+  }
+
+  pauseVideo() {
+    this.videoPlayer?.nativeElement.pause();
+  }
+  onVideoLoad(){
+    console.log("called", this.videoPlayer.nativeElement.duration);
+    this.durationTime = this.videoPlayer.nativeElement.duration;
+  }
+
   constructor(private route: ActivatedRoute, private router: Router) { }
+
+  
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
@@ -45,10 +62,12 @@ export class StoriesPageComponent {
   startProgress(): void {
     if (this.isPaused) {
       this.resumeProgress();
+      if(this.isVideo) this.playVideo();
       return;
     }
     else{
       this.pauseProgress();
+      if(this.isVideo) this.pauseVideo();
     }
     this.elapsedTime = 0;
     this.updateProgress();

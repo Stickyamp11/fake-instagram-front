@@ -59,6 +59,11 @@
           "defaultConfiguration": "production"
         },
         "serve": {
+          "options": {
+          "ssl": true,
+          "sslKey": "C:/Program Files/OpenSSL-Win64/bin/localhost.key",
+          "sslCert": "C:/Program Files/OpenSSL-Win64/bin/localhost.crt"
+          },
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {

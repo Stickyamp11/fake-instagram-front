@@ -3,6 +3,7 @@ import { FooterComponent } from '../footer/footer.component';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { LoginService } from '../login.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../auth-service.service';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ import { Router } from '@angular/router';
   styleUrl: './login.component.scss'
 })
 export class LoginComponent implements OnInit{
-  constructor(private fb: FormBuilder, private loginService: LoginService, private router: Router){ console.log("rescue me!");}
+  constructor(private fb: FormBuilder, private loginService: LoginService, private router: Router, private authService: AuthService){ console.log("rescue me!");}
   loginForm = this.fb.group({
     email: '',
     password: ''
@@ -31,7 +32,7 @@ export class LoginComponent implements OnInit{
       setInterval(this.changeImgFocused.bind(this), 5000);
   }
   changeImgFocused(){
-    console.log("aaa",this.imgPhoneSig);
+    //console.log("aaa",this.imgPhoneSig);
     this.imgPhoneSig.set(this.possibleImages[this.imgCounter]);
     this.imgCounter++;
     if(this.imgCounter >= this.possibleImages.length) this.imgCounter = 0;
@@ -45,6 +46,8 @@ export class LoginComponent implements OnInit{
     this.loginService.login(userLogin).subscribe(response => {
       if(response.succeed)
       {
+        this.authService.clearAuthCache();
+        console.log("routing home");
         this.router.navigate(["/home"]);
       }
     })

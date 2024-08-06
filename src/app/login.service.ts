@@ -15,7 +15,7 @@ export class LoginService {
 
   login(userLogin: UserLogin): Observable<LoginResponse> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-    return this.http.post<LoginResponse>(this.loginEndpoint, userLogin, { headers })
+    return this.http.post<LoginResponse>(this.loginEndpoint, userLogin, { headers, withCredentials: true })
       .pipe(
         map(response => {
           console.log("response", response);

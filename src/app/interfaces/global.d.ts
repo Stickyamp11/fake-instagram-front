@@ -12,3 +12,7 @@ interface UserLogin{
 interface LoginResponse{
   succeed: boolean
 }
+
+interface isAuthenticatedResponse{
+  isAuthenticated: boolean
+}

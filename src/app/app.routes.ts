@@ -7,9 +7,11 @@ import { SkeletonImageComponent } from './modals/skeleton-image/skeleton-image.c
 import { NewPublicationsComponent } from './new-publications/new-publications.component';
 
 export const routes: Routes = [
-  { path: 'home', component: UserHomeComponent, canActivate: [] },
+  { path: 'home', component: UserHomeComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
-  { path: 'stories/:username/:storyId', component: StoriesPageComponent, canActivate: [] },
+  { path: 'stories/:username/:storyId', component: StoriesPageComponent, canActivate: [AuthGuard] },
   { path: 'test', component: NewPublicationsComponent },
+  { path: '**', redirectTo: 'home' },
+
 
 ];

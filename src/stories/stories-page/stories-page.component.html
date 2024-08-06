@@ -19,7 +19,12 @@
         </div>
         <div class="stories-main">
             <div class="story-content">
-                <img class="main-content" src="../../assets/452989553_793893229566973_9011123970707059570_n.jfif">
+                @if(isVideo){
+                    <video #videoPlayer src="../../assets/SampleVideo_1280x720_1mb.mp4" class="main-content" (loadedmetadata)="onVideoLoad()"></video>
+                }
+                @else{
+                    <img class="main-content" src="../../assets/452989553_793893229566973_9011123970707059570_n.jfif">
+                }
             </div>
             <div class="interactive-menu">
                 <div class="progress-bar">
