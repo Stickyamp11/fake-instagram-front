@@ -12,7 +12,7 @@ import { toSignal} from '@angular/core/rxjs-interop'
   templateUrl: './user-publications.component.html',
   styleUrl: './user-publications.component.scss'
 })
-export class UserPublicationsComponent implements AfterViewInit, OnDestroy, OnInit {
+export class UserPublicationsComponent implements OnDestroy, OnInit {
   constructor(private pseudoGlobalStateService: PseudoGlobalStateService){
     this.publicationsSig = toSignal(this.pseudoGlobalStateService.publications$, {initialValue: []})
   }
@@ -24,15 +24,14 @@ export class UserPublicationsComponent implements AfterViewInit, OnDestroy, OnIn
   
 
   ngOnInit(){
+    this.observer = this.pseudoGlobalStateService.publicationObserver;
     this.pseudoGlobalStateService.publications$.subscribe((pubs) => {
       console.log("aaaa", pubs);
     })
-    //this.publications$ = this.pseudoGlobalStateService.publications$;
-  }
 
-  ngAfterViewInit() {
-    this.setupObserver();
-    //this.observeLastElement();
+    //this.setupObserver();
+
+    //this.publications$ = this.pseudoGlobalStateService.publications$;
   }
   ngOnDestroy(): void {
     if (this.observer) {
@@ -40,26 +39,23 @@ export class UserPublicationsComponent implements AfterViewInit, OnDestroy, OnIn
     }
   }
 
-  private setupObserver() {
-    this.observer = new IntersectionObserver((entries, observer) => {
+  /*private setupObserver() {
+    this.observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
+          console.log("intersecting");
+          console.log(entry.target,"entry target");
+          this.observer.unobserve(entry.target);  // Stop observing the current last element
           this.loadMoreItems();
-          observer.unobserve(entry.target);  // Stop observing the current last element
+
         }
       });
     });
-  }
+  }*/
 
   loadMoreItems() {
-    console.log("loaded items");
-    //this.publications = [...this.publications, {id:"",text:""}];
-    this.pseudoGlobalStateService.fetchMorePublications();
-    this.observeLastElement();
+    //console.log("loaded items");
+    //this.pseudoGlobalStateService.fetchMorePublications();
   }
 
-  private observeLastElement() {
-    console.log("observing last element,", this.pubElements.last.nativeElement);
-      this.observer.observe(this.pubElements.last.nativeElement); 
-  }
 }

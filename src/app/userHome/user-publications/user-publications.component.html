@@ -1,7 +1,7 @@
 <div class="user-publications-section" *ngIf="publicationsSig()">
-    @for (pub of publicationsSig(); track pub; let i = $index) {
-        <div class="user-publication" #pubElements>
-            <app-user-publication></app-user-publication>
+    @for (pub of publicationsSig(); track pub; let i = $index; let last = $last) {
+        <div class="user-publication">
+            <app-user-publication [isLast]="last" [observer]="observer"></app-user-publication>
         </div>
         <!--<ng-container *ngIf="i !== publications.length - 1; else lastElementTemplate">
             <div class="user-publication">

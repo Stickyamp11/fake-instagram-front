@@ -28,7 +28,9 @@ export class AuthService {
   }
 
   isAuthenticated(): Observable<boolean> {
-    if(this.authCache != null) return of(this.authCache);
+    //Fake response
+    return of(true);
+    //if(this.authCache != null) return of(this.authCache);
 
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.http.get<isAuthenticatedResponse>(this.isAuthenticatedEndpoint, { headers, withCredentials: true })
