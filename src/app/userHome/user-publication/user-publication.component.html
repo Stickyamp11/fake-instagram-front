@@ -1,6 +1,6 @@
 <div #element class="user-publication-section">
     <div class="header">
-        <img src="../../assets/manu_cs21.jpg" class="creator-logo">
+        <img [src]="imageUrl" class="creator-logo">
         <div class="creator-username">manu.cs21</div>
         <div class="upload-date">6 días</div>
         <div class="options" (click)="openOptions()">
@@ -9,7 +9,7 @@
     </div>
     <div class="content">
         <!--<img src="../../assets/content_1.jpg" alt="" class="content-img">-->
-        <app-skeleton-image imageUrl="../../assets/content_1.jpg" placeholder-width="500px" placeholder-height="500px" class="content-skeleton"></app-skeleton-image>
+        <app-skeleton-image [imageUrl]="publicationImageUrl" placeholder-width="500px" placeholder-height="500px" class="content-skeleton"></app-skeleton-image>
     </div>
     <div class="comments-section">
         <div class="action-bar">

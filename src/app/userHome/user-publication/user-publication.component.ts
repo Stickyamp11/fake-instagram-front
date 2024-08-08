@@ -2,6 +2,7 @@ import { AfterViewInit, booleanAttribute, Component, ElementRef, Input, OnInit, 
 import { OptionsModalComponent } from '../../modals/options-modal/options-modal.component';
 import { SkeletonImageComponent } from '../../modals/skeleton-image/skeleton-image.component';
 import { PseudoGlobalStateService } from '../../pseudo-global-state.service';
+import { ImageDummyService } from '../../image-dummy.service';
 
 @Component({
   selector: 'app-user-publication',
@@ -16,7 +17,11 @@ export class UserPublicationComponent implements AfterViewInit {
   @Input() observer: IntersectionObserver | undefined;
   @ViewChild('element') element!: ElementRef;
 
-  constructor(private pseudoGlobalStateService: PseudoGlobalStateService){
+  imageUrl: string = "";
+  publicationImageUrl: string = "";
+  constructor(private pseudoGlobalStateService: PseudoGlobalStateService, private imageDummyService: ImageDummyService){
+    this.imageUrl = this.imageDummyService.getFullPathToRandomUserImage();
+    this.publicationImageUrl = this.imageDummyService.getFullPathToRandomPublicationImage();
   }
 
   ngAfterViewInit(){

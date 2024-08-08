@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { PublicationsService } from './publications.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,23 +12,18 @@ export class PseudoGlobalStateService {
   publicationObserver!: IntersectionObserver;
   observedElements: Set<Element> = new Set();
 
-  constructor() { 
-    this.fetchPublications();
+  itemsPerPage: number = 5;
+
+  constructor(private publicationsService: PublicationsService) { 
+    this.fetchInitialPublications();
     this.setupObserver();
   }
 
   
-  fetchPublications(){
-   //fake for now 
-   this.publications = [
-    {id:"",text:""},
-    {id:"",text:""},
-    {id:"",text:""}, 
-    {id:"",text:""}, 
-    {id:"",text:""}, 
-    {id:"",text:""} 
-  ]
-  this.publications$.next(this.publications);
+  fetchInitialPublications(){
+    this.publicationsService.getPublications(0,this.itemsPerPage).subscribe(publications => {
+      this.AddPublications(publications);
+    });
   }
 
   resetPublications(){
@@ -36,7 +32,15 @@ export class PseudoGlobalStateService {
   }
 
   fetchMorePublications(){
-    this.publications.push({id:"",text:""});
+    this.publicationsService.getPublications(this.publications.length ,this.publications.length + this.itemsPerPage).subscribe(publications => {
+      this.AddPublications(publications);
+    });
+  }
+
+  AddPublications(publications: Array<Publication>){
+    if(publications.length == 0) return;
+
+    this.publications.push(...publications);
     this.publications$.next(this.publications);
   }
 

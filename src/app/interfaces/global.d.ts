@@ -1,8 +1,8 @@
 interface Publication {
     id: string,
-    text: string
+    title: string,
+    description: string
   }
-
 
 interface UserLogin{
   email: string,
@@ -14,5 +14,6 @@ interface LoginResponse{
 }
 
 interface isAuthenticatedResponse{
-  isAuthenticated: boolean
+  isAuthenticated: boolean,
+  userGuid: string
 }

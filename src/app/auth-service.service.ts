@@ -11,6 +11,7 @@ export class AuthService {
   //isAuth$: Subject<boolean> = new Subject<boolean>();
 
   authCache: boolean | null = null;
+  public userGuid: string = "";
 
   constructor(private http: HttpClient) {
     console.log("emitted next auth");
@@ -29,8 +30,8 @@ export class AuthService {
 
   isAuthenticated(): Observable<boolean> {
     //Fake response
-    return of(true);
-    //if(this.authCache != null) return of(this.authCache);
+    //return of(true);
+    if(this.authCache != null) return of(this.authCache);
 
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.http.get<isAuthenticatedResponse>(this.isAuthenticatedEndpoint, { headers, withCredentials: true })
@@ -38,6 +39,7 @@ export class AuthService {
         map(response => {
           console.log("response", response);
           this.authCache = response.isAuthenticated;
+          this.userGuid = response.userGuid;
           return response.isAuthenticated;
         }),
         catchError(this.handleError)
